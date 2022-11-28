@@ -1,0 +1,56 @@
+.header {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  background-color: #00477d;
+}
+
+.mwidth {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  /* padding: 1rem 0; */
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.author {
+  font-weight: bold;
+  padding: 5px 5px;
+  align-self: center;
+  font-size: 10px;
+  color: aqua;
+  background: #00233d;
+  border-radius: 1rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-left: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #d7897dce;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  color: #e6fcfc;
+}
