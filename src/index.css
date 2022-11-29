@@ -60,20 +60,12 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    background-color: rebeccapurple;
-  }
-
   .btn {
     padding: 0.5rem;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  body {
-    background-color: red;
-  }
-
   .btn {
     border-radius: 9999px;
     padding: 0.25rem 0.5rem;
