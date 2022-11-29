@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
   background-color: #d7897d;
 }
@@ -53,6 +53,41 @@ body {
 .btn--flat:active {
   background-color: #00589b;
   color: white;
+}
+
+.short {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: rebeccapurple;
+  }
+
+  .btn {
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  body {
+    background-color: red;
+  }
+
+  .btn {
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .short {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.575);
+  }
+
+  .long {
+    display: none;
+  }
 }
 
 /* #8068ee #1bd6c3 */

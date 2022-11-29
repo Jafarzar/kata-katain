@@ -47,4 +47,29 @@
 
 .actions button {
   font-size: 1.25rem;
+  text-decoration: none;
+  background-color: #00477d;
+  color: white;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #00477d;
+  cursor: pointer;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #00589b;
+  border-color: #00589b;
+}
+
+@media only screen and (max-width: 768px) {
+  .actions button {
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .actions button {
+    font-size: 0.8rem;
+  }
 }

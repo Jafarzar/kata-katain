@@ -25,3 +25,9 @@
   border-color: #00589b;
   color: white;
 }
+
+@media only screen and (max-width: 540px) {
+  .sorting button {
+    font-size: 0.8rem;
+  }
+}

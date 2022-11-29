@@ -6,13 +6,13 @@
 }
 
 .mwidth {
-  width: 100%;
+  width: 90%;
   max-width: 40rem;
   display: flex;
   /* padding: 1rem 0; */
   justify-content: space-between;
   align-items: center;
-  margin: auto;
+  margin: 3rem auto;
 }
 
 .logo {
@@ -53,4 +53,26 @@
 .nav a:active,
 .nav a.active {
   color: #e6fcfc;
+}
+
+@media only screen and (max-width: 540px) {
+  .header {
+    height: 8rem;
+  }
+
+  .mwidth {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .nav ul {
+    gap: 2rem;
+    margin: 0;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .nav li {
+    margin: 0;
+  }
 }

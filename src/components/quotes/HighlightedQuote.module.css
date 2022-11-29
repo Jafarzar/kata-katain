@@ -18,3 +18,23 @@
   text-align: right;
   color: #d7897d;
 }
+
+@media only screen and (max-width: 768px) {
+  .quote p {
+    font-size: 2rem;
+  }
+
+  .quote figcaption {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .quote p {
+    font-size: 1rem;
+  }
+
+  .quote figcaption {
+    font-size: 0.6rem;
+  }
+}

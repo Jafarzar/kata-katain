@@ -3,7 +3,7 @@
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   background-color: #ebdaca;
@@ -34,4 +34,16 @@
 .item figcaption {
   font-style: italic;
   color: #566d6d;
+}
+
+@media only screen and (max-width: 768px) {
+  .item blockquote {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .item blockquote {
+    font-size: 1rem;
+  }
 }
