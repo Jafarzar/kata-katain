@@ -19,9 +19,15 @@ const QuoteForm = (props) => {
     const enteredAuthor = authorInputRef.current.value;
     const enteredText = textInputRef.current.value;
 
+    if (/^.*w.*$/.test(enteredText)) {
+      alert("Wrong content!");
+      return;
+    }
+
     const enteredAuthorIsValid = !isEmpty(enteredAuthor);
     const enteredTextIsValid = !isEmpty(enteredText);
 
+    // eslint-disable-next-line no-lone-blocks
     {
       enteredAuthorIsValid &&
         enteredTextIsValid &&
@@ -59,11 +65,16 @@ const QuoteForm = (props) => {
 
           <div className={classes.control}>
             <label htmlFor="author">Author</label>
-            <input type="text" id="author" ref={authorInputRef} />
+            <input
+              type="text"
+              id="author"
+              ref={authorInputRef}
+              pattern="^.*\w.*$"
+            />
           </div>
           <div className={classes.control}>
             <label htmlFor="text">Text</label>
-            <textarea id="text" rows="5" ref={textInputRef}></textarea>
+            <textarea id="text" rows="5" ref={textInputRef} required></textarea>
           </div>
           <div className={classes.actions}>
             <button onClick={finishEnteringHandler}>Add Quote</button>

@@ -3,11 +3,28 @@ import { Link } from "react-router-dom";
 import classes from "./QuoteItem.module.css";
 
 const QuoteItem = (props) => {
+  // fitur sensor kalimat
+  var Filter = require("bad-words"),
+    filter = new Filter();
+
+  var newBadWords = ["tolol", "bacot"];
+
+  filter.addWords(...newBadWords);
+
+  // test Filter
+  // console.log(filter.clean("tolol Tolol tOlol"));
+
+  // console.log(filter.clean("...;"));
+
   return (
     <li className={classes.item}>
       <figure>
         <blockquote>
-          <p>{props.text}</p>
+          <p>
+            {filter
+              .clean(props.text + "/ma9/[p112ntap")
+              .replace("/ma9/[p112ntap", "")}
+          </p>
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
@@ -20,3 +37,4 @@ const QuoteItem = (props) => {
 };
 
 export default QuoteItem;
+// yang ditampilkan di all quotes

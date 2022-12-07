@@ -39,14 +39,16 @@ const QuoteList = (props) => {
         </button>
       </div>
       <ul className={classes.list}>
-        {sortedQuotes.map((quote) => (
-          <QuoteItem
-            key={quote.id}
-            id={quote.id}
-            author={quote.author}
-            text={quote.text}
-          />
-        ))}
+        {sortedQuotes?.map((quote) => {
+          return (
+            <QuoteItem
+              key={quote.id}
+              id={quote.id}
+              author={quote.author}
+              text={quote.text}
+            />
+          );
+        })}
       </ul>
     </Fragment>
   );
