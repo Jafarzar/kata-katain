@@ -40,9 +40,23 @@ const QuoteDetail = () => {
     return <p>No quote found!</p>;
   }
 
+  // fitur sensor kalimat
+  var Filter = require("bad-words"),
+    filter = new Filter();
+
+  var newBadWords = ["tolol", "bacot"];
+
+  filter.addWords(...newBadWords);
+
+  // test Filter
+  // console.log(filter.clean("tolol Tolol tOlol"));
+
   return (
     <Fragment>
-      <HighlightedQuote text={loadedQuote.text} author={loadedQuote.author} />
+      <HighlightedQuote
+        text={filter.clean(loadedQuote.text)}
+        author={filter.clean(loadedQuote.author)}
+      />
       <Route path={match.path} exact>
         <div className="centered">
           <Link className="btn--flat" to={`${match.url}/comments`}>
