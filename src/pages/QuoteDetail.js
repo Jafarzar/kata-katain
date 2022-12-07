@@ -6,6 +6,7 @@ import Comments from "../components/comments/Comments";
 import useHttp from "../hooks/use-http";
 import { getSingleQuote } from "../lib/api";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
+import { badwords } from "../constants/badwords";
 
 const QuoteDetail = () => {
   const match = useRouteMatch();
@@ -44,9 +45,7 @@ const QuoteDetail = () => {
   var Filter = require("bad-words"),
     filter = new Filter();
 
-  var newBadWords = ["tolol", "bacot"];
-
-  filter.addWords(...newBadWords);
+  filter.addWords(...badwords);
 
   // test Filter
   // console.log(filter.clean("tolol Tolol tOlol"));
@@ -54,7 +53,9 @@ const QuoteDetail = () => {
   return (
     <Fragment>
       <HighlightedQuote
-        text={filter.clean(loadedQuote.text)}
+        text={filter
+          .clean(loadedQuote.text + "/ma9/[p112ntap")
+          .replace("/ma9/[p112ntap", "")}
         author={filter.clean(loadedQuote.author)}
       />
       <Route path={match.path} exact>

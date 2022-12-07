@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { badwords } from "../../constants/badwords";
 
 import classes from "./QuoteItem.module.css";
 
@@ -7,9 +8,7 @@ const QuoteItem = (props) => {
   var Filter = require("bad-words"),
     filter = new Filter();
 
-  var newBadWords = ["tolol", "bacot"];
-
-  filter.addWords(...newBadWords);
+  filter.addWords(...badwords);
 
   // test Filter
   // console.log(filter.clean("tolol Tolol tOlol"));
