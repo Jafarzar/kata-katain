@@ -6,7 +6,7 @@ import Comments from "../components/comments/Comments";
 import useHttp from "../hooks/use-http";
 import { getSingleQuote } from "../lib/api";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
-import { badwords } from "../constants/badwords";
+import { badwords, removeWords } from "../constants/badwords";
 
 const QuoteDetail = () => {
   const match = useRouteMatch();
