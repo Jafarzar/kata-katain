@@ -46,6 +46,7 @@ const QuoteDetail = () => {
     filter = new Filter();
 
   filter.addWords(...badwords);
+  filter.removeWords(...removeWords);
 
   // test Filter
   // console.log(filter.clean("tolol Tolol tOlol"));
