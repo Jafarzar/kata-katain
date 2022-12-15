@@ -1,5 +1,6 @@
-import { Fragment } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { Fragment, useState } from "react";
+import truncate from "lodash.truncate";
+import slice from "lodash.slice";
 
 import QuoteItem from "./QuoteItem";
 import classes from "./QuoteList.module.css";
@@ -15,41 +16,57 @@ const sortQuotes = (quotes, ascending) => {
 };
 
 const QuoteList = (props) => {
-  const history = useHistory();
-  const location = useLocation();
+  const [index, setIndex] = useState(8);
+  const initialPosts = slice(sortQuotes(props.quotes), 0, index);
 
-  const queryParams = new URLSearchParams(location.search);
+  // const history = useHistory();
+  // const location = useLocation();
 
-  const isSortingAscending = queryParams.get("sort") === "asc";
+  // const queryParams = new URLSearchParams(location.search);
 
-  const sortedQuotes = sortQuotes(props.quotes, isSortingAscending);
+  // const isSortingAscending = queryParams.get("sort") === "asc";
 
-  const changeSortingHandler = () => {
-    history.push({
-      pathname: location.pathname,
-      search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
-    });
+  // const sortedQuotes = sortQuotes(props.quotes, isSortingAscending);
+
+  // const changeSortingHandler = () => {
+  //   history.push({
+  //     pathname: location.pathname,
+  //     search: `?sort=${isSortingAscending ? "desc" : "asc"}`,
+  //   });
+  // };
+
+  const loadMore = () => {
+    setIndex(index + 5);
+    console.log(index);
   };
 
   return (
     <Fragment>
-      <div className={classes.sorting}>
+      {/* <div className={classes.sorting}>
         <button onClick={changeSortingHandler}>
           Sort {isSortingAscending ? "Descending" : "Ascending"}
         </button>
-      </div>
+      </div> */}
       <ul className={classes.list}>
-        {sortedQuotes?.map((quote) => {
+        {/* {sortedQuotes?.map((quote) => {
+          return (
+            
+          );
+        })} */}
+        {initialPosts.map((quote) => {
           return (
             <QuoteItem
               key={quote.id}
               id={quote.id}
               author={quote.author}
-              text={quote.text}
+              text={truncate(quote.text, { length: 70 })}
             />
           );
         })}
       </ul>
+      <button onClick={loadMore} type="button" className="btn">
+        Load More +
+      </button>
     </Fragment>
   );
 };
