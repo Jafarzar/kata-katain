@@ -64,7 +64,7 @@ const QuoteList = (props) => {
           );
         })}
       </ul>
-      <button onClick={loadMore} type="button" className="btn">
+      <button onClick={loadMore} type="button" className="btn centered">
         Load More +
       </button>
     </Fragment>

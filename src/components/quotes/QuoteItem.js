@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { badwords, removeWords } from "../../constants/badwords";
+import { MdOutlineFullscreen } from "react-icons/md";
 
 import classes from "./QuoteItem.module.css";
 
@@ -28,9 +29,12 @@ const QuoteItem = (props) => {
         </blockquote>
         <figcaption>{props.author}</figcaption>
       </figure>
-      <Link className="btn" to={`/quotes/${props.id}`}>
-        <span className="long">View Fullscreen</span>
-        <span className="short">O</span>
+      <Link
+        to={`/quotes/${props.id}`}
+        style={{ textDecoration: "none", color: "white" }}
+      >
+        <span className="btn long">View</span>
+        <MdOutlineFullscreen className="short" />
       </Link>
     </li>
   );

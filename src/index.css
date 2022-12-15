@@ -73,8 +73,9 @@ body {
 
   .short {
     display: inline-block;
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.575);
+    font-size: 3rem;
+    padding: 0 !important;
+    color: #00477d;
   }
 
   .long {
