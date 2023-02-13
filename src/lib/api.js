@@ -1,5 +1,4 @@
-const FIREBASE_DOMAIN =
-  "https://kata-katain-default-rtdb.asia-southeast1.firebasedatabase.app/";
+const FIREBASE_DOMAIN = process.env.REACT_APP_API_KEY;
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);

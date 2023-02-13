@@ -19,10 +19,10 @@ const QuoteForm = (props) => {
     const enteredAuthor = authorInputRef.current.value;
     const enteredText = textInputRef.current.value;
 
-    if (/^.*w.*$/.test(enteredText)) {
-      alert("Wrong content!");
-      return;
-    }
+    // if (/^.*w.*$/.test(enteredText)) {
+    //   alert("Wrong content!");
+    //   return;
+    // }
 
     const enteredAuthorIsValid = !isEmpty(enteredAuthor);
     const enteredTextIsValid = !isEmpty(enteredText);
